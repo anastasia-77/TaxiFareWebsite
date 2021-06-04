@@ -68,8 +68,9 @@ params = {
 @st.cache
 def get_predict():
     
-
-    response = requests.get('https://taxifare.lewagon.ai/predict', params=params)
+    my_url = 'https://docker-tfm-ipbs6r3hdq-ew.a.run.app/predict'
+    url_wagon = ''https://taxifare.lewagon.ai/predict''
+    response = requests.get(my_url, params=params)
     taxi_fare = response.json()
     return round(taxi_fare['prediction'], 2)
 
