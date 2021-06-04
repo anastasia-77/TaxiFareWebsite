@@ -69,7 +69,7 @@ params = {
 def get_predict():
     
     my_url = 'https://docker-tfm-ipbs6r3hdq-ew.a.run.app/predict'
-    url_wagon = ''https://taxifare.lewagon.ai/predict''
+    url_wagon = 'https://taxifare.lewagon.ai/predict'
     response = requests.get(my_url, params=params)
     taxi_fare = response.json()
     return round(taxi_fare['prediction'], 2)
