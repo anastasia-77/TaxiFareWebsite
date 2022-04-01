@@ -68,14 +68,14 @@ params = {
             }
 
 @st.cache
-def get_predict(url):
+def get_predict():
     
     # my_url = 'https://docker-tfm-ipbs6r3hdq-ew.a.run.app/predict'
     my_url = 'https://api-ipbs6r3hdq-ew.a.run.app/predict'
     url_wagon = 'https://taxifare.lewagon.ai/predict'
     response = requests.get(url_wagon, params=params) # my_url
     taxi_fare = response.json()
-    return round(taxi_fare['prediction'], 2)
+    return round(taxi_fare['fare'], 2) #prediction
 
 """### Your Taxi Fare $$: 
 """
