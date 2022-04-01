@@ -9,9 +9,9 @@ install_requirements:
 # ----------------------------------
 #         HEROKU COMMANDS
 # ----------------------------------
-
+# app.py
 streamlit:
-	-@streamlit run app.py
+	-@streamlit run app_new.py
 
 heroku_login:
 	-@heroku login
