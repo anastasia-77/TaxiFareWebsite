@@ -1,11 +1,13 @@
-import streamlit as st
-import pandas as pd
-import numpy as np
-from PIL import Image
-import datetime
-import json
-import requests
+import streamlit as st  # put to requirements.txt
+import pandas as pd     # put to requirements.txt
+import numpy as np      # put to requirements.txt
 
+from PIL import Image   # built in lib
+import datetime         # built in lib 
+import json             # built in lib
+import requests         # built in lib
+
+# Add a Header
 """
 # New York City Taxi Fare
 """
@@ -66,11 +68,12 @@ params = {
             }
 
 @st.cache
-def get_predict():
+def get_predict(url):
     
-    my_url = 'https://docker-tfm-ipbs6r3hdq-ew.a.run.app/predict'
+    # my_url = 'https://docker-tfm-ipbs6r3hdq-ew.a.run.app/predict'
+    my_url = 'https://api-ipbs6r3hdq-ew.a.run.app/predict'
     url_wagon = 'https://taxifare.lewagon.ai/predict'
-    response = requests.get(my_url, params=params)
+    response = requests.get(url_wagon, params=params) # my_url
     taxi_fare = response.json()
     return round(taxi_fare['prediction'], 2)
 

@@ -16,9 +16,12 @@ streamlit:
 heroku_login:
 	-@heroku login
 
+APP_NAME = 'awesome-tfm-app-by_anastasia'
+
 heroku_create_app:
 	-@heroku create ${APP_NAME}
 
+# very useful
 deploy_heroku:
 	-@git push heroku master
 	-@heroku ps:scale web=1
